@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class TextfieldCustom extends StatelessWidget {
-  const TextfieldCustom({super.key, required this.textoTitulo, required this.controller});
+  const TextfieldCustom({super.key, required this.textoTitulo, required this.controller, required this.tipo});
   final String textoTitulo;
+  final TextInputType tipo;
   final TextEditingController controller;
   @override
   Widget build(BuildContext context) {
@@ -12,6 +13,7 @@ class TextfieldCustom extends StatelessWidget {
         Text(textoTitulo),
         TextField(
           controller: controller,
+          keyboardType: tipo,
           decoration: InputDecoration(
             hintText: 'Escribe algo...',
             filled: true,
